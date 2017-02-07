@@ -1,10 +1,19 @@
 //! The `data` module holds all the various structs and traits related to
 //! representing the dialogue tree.
+extern crate uuid;
+use self::uuid::Uuid;
 
 /// Conversation Participant, someone who participates in a conversation.
 pub struct Participant {
-    id: u64,
+    id: Uuid,
     name: String,
+}
+
+impl Participant {
+    fn new(name: String) -> Self {
+        let rand_id = Uuid::new_v4(); // ensures the use of a unique identifier for the participant
+        Participant{ id: rand_id, name: name}
+    }
 }
 
 /// A line is like a line in a play. A piece of text that someone reads out-loud.
