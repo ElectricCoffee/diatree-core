@@ -10,7 +10,7 @@ pub struct Participant {
 
 impl Participant {
     pub fn new(name: String) -> Self {
-        let rand_id = Uuid::new_v4(); // ensures the use of a unique identifier for the participant
-        Participant{ id: rand_id, name: name }
+        // Uuid::new_v4() ensures the use of a unique identifier for the participant
+        Participant{ id: Uuid::new_v4(), name: name }
     }
 }
