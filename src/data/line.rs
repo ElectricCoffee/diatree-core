@@ -7,3 +7,9 @@ pub struct Line {
     participant: Participant,
     message: String,
 }
+
+impl Line {
+    pub fn new(part: Participant, msg: String) -> Self {
+        Line { participant: part, message: msg }
+    }
+}
